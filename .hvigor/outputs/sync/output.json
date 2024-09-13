@@ -1,0 +1,110 @@
+{
+  "ohos-module-entry": {
+    "SELECT_TARGET": "default",
+    "MODULE_BUILD_DIR": "C:\\Users\\86187\\Desktop\\ElectronicAlbum\\ElectronicAlbum\\entry\\build",
+    "DEPENDENCY_INFO": {
+      "@yunkss/ef_ui": "C:\\Users\\86187\\Desktop\\ElectronicAlbum\\ElectronicAlbum\\oh_modules\\.ohpm\\@yunkss+ef_ui@1.0.0\\oh_modules\\@yunkss\\ef_ui",
+      "@yunkss/ef_json": "C:\\Users\\86187\\Desktop\\ElectronicAlbum\\ElectronicAlbum\\oh_modules\\.ohpm\\@yunkss+ef_json@1.0.1\\oh_modules\\@yunkss\\ef_json",
+      "@yunkss/ef_core": "C:\\Users\\86187\\Desktop\\ElectronicAlbum\\ElectronicAlbum\\oh_modules\\.ohpm\\@yunkss+ef_core@1.0.1\\oh_modules\\@yunkss\\ef_core"
+    },
+    "TARGETS": {
+      "default": {
+        "SOURCE_ROOT": "C:\\Users\\86187\\Desktop\\ElectronicAlbum\\ElectronicAlbum\\entry\\src\\main",
+        "RESOURCES_PATH": [
+          "C:\\Users\\86187\\Desktop\\ElectronicAlbum\\ElectronicAlbum\\entry\\src\\main\\resources"
+        ],
+        "BUILD_PATH": {
+          "OUTPUT_PATH": "C:\\Users\\86187\\Desktop\\ElectronicAlbum\\ElectronicAlbum\\entry\\build\\default\\outputs\\default",
+          "INTERMEDIA_PATH": "C:\\Users\\86187\\Desktop\\ElectronicAlbum\\ElectronicAlbum\\entry\\build\\default\\intermediates",
+          "JS_ASSETS_PATH": "C:\\Users\\86187\\Desktop\\ElectronicAlbum\\ElectronicAlbum\\entry\\build\\default\\intermediates\\loader_out\\default",
+          "JS_LITE_ASSETS_PATH": "C:\\Users\\86187\\Desktop\\ElectronicAlbum\\ElectronicAlbum\\entry\\build\\default\\intermediates\\loader_out_lite\\default",
+          "RES_PATH": "C:\\Users\\86187\\Desktop\\ElectronicAlbum\\ElectronicAlbum\\entry\\build\\default\\intermediates\\res\\default",
+          "RES_PROFILE_PATH": "C:\\Users\\86187\\Desktop\\ElectronicAlbum\\ElectronicAlbum\\entry\\build\\default\\intermediates\\res\\default\\resources\\base\\profile",
+          "ETS_SUPER_VISUAL_PATH": "C:\\Users\\86187\\Desktop\\ElectronicAlbum\\ElectronicAlbum\\entry\\build\\default\\cache\\default\\default@CompileArkTS\\esmodule",
+          "JS_SUPER_VISUAL_PATH": "C:\\Users\\86187\\Desktop\\ElectronicAlbum\\ElectronicAlbum\\entry\\build\\default\\cache\\default\\default@CompileJS\\jsbundle",
+          "WORKER_LOADER": "C:\\Users\\86187\\Desktop\\ElectronicAlbum\\ElectronicAlbum\\entry\\build\\default\\intermediates\\loader\\default\\loader.json",
+          "MANIFEST_JSON": "C:\\Users\\86187\\Desktop\\ElectronicAlbum\\ElectronicAlbum\\entry\\build\\default\\intermediates\\manifest\\default",
+          "OUTPUT_METADATA_JSON": "C:\\Users\\86187\\Desktop\\ElectronicAlbum\\ElectronicAlbum\\entry\\build\\default\\intermediates\\hap_metadata\\default\\output_metadata.json"
+        },
+        "BUILD_OPTION": {
+          "debuggable": true
+        }
+      }
+    },
+    "BUILD_OPTION": {
+      "default-default": {
+        "debuggable": true,
+        "copyFrom": "default",
+        "resOptions": {}
+      }
+    },
+    "BUILD_PROFILE_OPT": {
+      "apiType": "stageMode",
+      "buildOption": {},
+      "targets": [
+        {
+          "name": "default",
+          "runtimeOS": "HarmonyOS"
+        }
+      ]
+    }
+  },
+  "ohos-project": {
+    "SELECT_PRODUCT_NAME": "default",
+    "MODULE_BUILD_DIR": "C:\\Users\\86187\\Desktop\\ElectronicAlbum\\ElectronicAlbum\\build",
+    "BUNDLE_NAME": "com.example.electronicalbum",
+    "BUILD_PATH": {
+      "OUTPUT_PATH": "C:\\Users\\86187\\Desktop\\ElectronicAlbum\\ElectronicAlbum\\build\\outputs\\default"
+    },
+    "MODULES": [
+      {
+        "name": "entry",
+        "srcPath": "C:\\Users\\86187\\Desktop\\ElectronicAlbum\\ElectronicAlbum\\entry",
+        "targets": [
+          {
+            "name": "default",
+            "applyToProducts": [
+              "default"
+            ]
+          }
+        ],
+        "belongProjectPath": "C:\\Users\\86187\\Desktop\\ElectronicAlbum\\ElectronicAlbum"
+      }
+    ],
+    "PROFILE_OPT": {
+      "app": {
+        "signingConfigs": [],
+        "products": [
+          {
+            "name": "default",
+            "signingConfig": "default",
+            "compatibleSdkVersion": "5.0.0(12)",
+            "runtimeOS": "HarmonyOS"
+          }
+        ]
+      },
+      "modules": [
+        {
+          "name": "entry",
+          "srcPath": "./entry",
+          "targets": [
+            {
+              "name": "default",
+              "applyToProducts": [
+                "default"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "CONFIG_PROPERTIES": {
+      "enableSignTask": true,
+      "skipNativeIncremental": false
+    },
+    "OVERALL_PROJECT_PATHS": [
+      "C:\\Users\\86187\\Desktop\\ElectronicAlbum\\ElectronicAlbum"
+    ]
+  },
+  "version": 1
+}

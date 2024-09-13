@@ -1,0 +1,12 @@
+{
+  "entry\\src\\main\\ets\\pages\\IndexPage.ets": [
+    "ohos.curves",
+    "ohos.promptAction",
+    "ohos.router",
+    "ohos.window",
+    "ohos.abilityAccessCtrl",
+    "ohos.app.ability.common",
+    "ohos.multimedia.image",
+    "ohos.effectKit"
+  ]
+}

@@ -1,0 +1,229 @@
+{
+  "entry\\src\\main\\ets\\entryability\\EntryAbility.ets": [
+    "If"
+  ],
+  "entry\\src\\main\\ets\\pages\\IndexPage.ets": [
+    "SwiperController",
+    "Scroller",
+    "CustomDialogController",
+    "Column",
+    "Row",
+    "Text",
+    "Swiper",
+    "ForEach",
+    "Image",
+    "Grid",
+    "GridItem",
+    "If"
+  ],
+  "entry\\src\\main\\ets\\components\\IconButton.ets": [
+    "Button",
+    "Image",
+    "Circle"
+  ],
+  "entry\\src\\main\\ets\\view\\PhotoItem.ets": [
+    "Column",
+    "Image",
+    "Stack",
+    "ForEach",
+    "If"
+  ],
+  "entry\\src\\main\\ets\\components\\CustomDialog.ets": [
+    "CustomDialogController",
+    "Column",
+    "Text",
+    "TextInput",
+    "Flex",
+    "Button"
+  ],
+  "oh_modules\\.ohpm\\@yunkss+ef_ui@1.0.0\\oh_modules\\@yunkss\\ef_ui\\src\\main\\ets\\ui\\auth\\AuthUtil.ets": [
+    "If"
+  ],
+  "oh_modules\\.ohpm\\@yunkss+ef_ui@1.0.0\\oh_modules\\@yunkss\\ef_ui\\src\\main\\ets\\ui\\prompt\\ToastUtil.ets": [
+    "If"
+  ],
+  "oh_modules\\.ohpm\\@yunkss+ef_core@1.0.1\\oh_modules\\@yunkss\\ef_core\\src\\main\\ets\\core\\base\\OutDTO.ets": [
+    "If"
+  ],
+  "oh_modules\\.ohpm\\@yunkss+ef_core@1.0.1\\oh_modules\\@yunkss\\ef_core\\src\\main\\ets\\core\\cache\\GlobalContext.ets": [
+    "If"
+  ],
+  "oh_modules\\.ohpm\\@yunkss+ef_core@1.0.1\\oh_modules\\@yunkss\\ef_core\\src\\main\\ets\\core\\cache\\GlobalThis.ets": [
+    "If"
+  ],
+  "oh_modules\\.ohpm\\@yunkss+ef_core@1.0.1\\oh_modules\\@yunkss\\ef_core\\src\\main\\ets\\core\\util\\ArrayUtil.ets": [
+    "If"
+  ],
+  "oh_modules\\.ohpm\\@yunkss+ef_core@1.0.1\\oh_modules\\@yunkss\\ef_core\\src\\main\\ets\\core\\util\\StrUtil.ets": [
+    "If"
+  ],
+  "oh_modules\\.ohpm\\@yunkss+ef_core@1.0.1\\oh_modules\\@yunkss\\ef_core\\src\\main\\ets\\core\\util\\CharUtil.ets": [
+    "If"
+  ],
+  "oh_modules\\.ohpm\\@yunkss+ef_core@1.0.1\\oh_modules\\@yunkss\\ef_core\\src\\main\\ets\\core\\util\\DateUtil.ets": [
+    "If"
+  ],
+  "oh_modules\\.ohpm\\@yunkss+ef_core@1.0.1\\oh_modules\\@yunkss\\ef_core\\src\\main\\ets\\core\\util\\IdCardUtil.ets": [
+    "If"
+  ],
+  "oh_modules\\.ohpm\\@yunkss+ef_core@1.0.1\\oh_modules\\@yunkss\\ef_core\\src\\main\\ets\\core\\util\\RegUtil.ets": [
+    "If"
+  ],
+  "oh_modules\\.ohpm\\@yunkss+ef_core@1.0.1\\oh_modules\\@yunkss\\ef_core\\src\\main\\ets\\core\\util\\IdUtil.ets": [
+    "If"
+  ],
+  "oh_modules\\.ohpm\\@yunkss+ef_core@1.0.1\\oh_modules\\@yunkss\\ef_core\\src\\main\\ets\\core\\util\\Logger.ets": [
+    "If"
+  ],
+  "oh_modules\\.ohpm\\@yunkss+ef_core@1.0.1\\oh_modules\\@yunkss\\ef_core\\src\\main\\ets\\core\\util\\PhoneUtil.ets": [
+    "If"
+  ],
+  "oh_modules\\.ohpm\\@yunkss+ef_core@1.0.1\\oh_modules\\@yunkss\\ef_core\\src\\main\\ets\\core\\util\\RandomUtil.ets": [
+    "If"
+  ],
+  "oh_modules\\.ohpm\\@yunkss+ef_ui@1.0.0\\oh_modules\\@yunkss\\ef_ui\\src\\main\\ets\\ui\\base\\ButtonUtil.ets": [
+    "If"
+  ],
+  "oh_modules\\.ohpm\\@yunkss+ef_json@1.0.1\\oh_modules\\@yunkss\\ef_json\\src\\main\\ets\\json\\JSONArray.ets": [
+    "If"
+  ],
+  "oh_modules\\.ohpm\\@yunkss+ef_json@1.0.1\\oh_modules\\@yunkss\\ef_json\\src\\main\\ets\\json\\JSONArrayList.ets": [
+    "If"
+  ],
+  "oh_modules\\.ohpm\\@yunkss+ef_json@1.0.1\\oh_modules\\@yunkss\\ef_json\\src\\main\\ets\\json\\JSONObject.ets": [
+    "If"
+  ],
+  "oh_modules\\.ohpm\\@yunkss+ef_json@1.0.1\\oh_modules\\@yunkss\\ef_json\\src\\main\\ets\\json\\JSONUtil.ets": [
+    "If"
+  ],
+  "oh_modules\\.ohpm\\@yunkss+ef_ui@1.0.0\\oh_modules\\@yunkss\\ef_ui\\src\\main\\ets\\ui\\base\\DownloadUtil.ets": [
+    "Column"
+  ],
+  "oh_modules\\.ohpm\\@yunkss+ef_ui@1.0.0\\oh_modules\\@yunkss\\ef_ui\\src\\main\\ets\\ui\\base\\ImmersionUtil.ets": [
+    "Rect",
+    "If"
+  ],
+  "oh_modules\\.ohpm\\@yunkss+ef_ui@1.0.0\\oh_modules\\@yunkss\\ef_ui\\src\\main\\ets\\ui\\base\\LocationUtil.ets": [
+    "If"
+  ],
+  "oh_modules\\.ohpm\\@yunkss+ef_ui@1.0.0\\oh_modules\\@yunkss\\ef_ui\\src\\main\\ets\\ui\\base\\NotificationUtil.ets": [
+    "If"
+  ],
+  "oh_modules\\.ohpm\\@yunkss+ef_ui@1.0.0\\oh_modules\\@yunkss\\ef_ui\\src\\main\\ets\\ui\\base\\PickerUtil.ets": [
+    "If"
+  ],
+  "oh_modules\\.ohpm\\@yunkss+ef_ui@1.0.0\\oh_modules\\@yunkss\\ef_ui\\src\\main\\ets\\ui\\base\\PreviewUtil.ets": [
+    "If"
+  ],
+  "oh_modules\\.ohpm\\@yunkss+ef_ui@1.0.0\\oh_modules\\@yunkss\\ef_ui\\src\\main\\ets\\ui\\base\\WindowUtil.ets": [
+    "If"
+  ],
+  "oh_modules\\.ohpm\\@yunkss+ef_ui@1.0.0\\oh_modules\\@yunkss\\ef_ui\\src\\main\\ets\\ui\\prompt\\ActionUtil.ets": [
+    "Button",
+    "ActionSheet",
+    "If"
+  ],
+  "oh_modules\\.ohpm\\@yunkss+ef_ui@1.0.0\\oh_modules\\@yunkss\\ef_ui\\src\\main\\ets\\ui\\prompt\\AlertUtil.ets": [
+    "AlertDialog",
+    "CustomDialogController",
+    "Row",
+    "If"
+  ],
+  "oh_modules\\.ohpm\\@yunkss+ef_ui@1.0.0\\oh_modules\\@yunkss\\ef_ui\\src\\main\\ets\\ui\\prompt\\ConfirmUtil.ets": [
+    "CustomDialogController",
+    "Row",
+    "If"
+  ],
+  "oh_modules\\.ohpm\\@yunkss+ef_ui@1.0.0\\oh_modules\\@yunkss\\ef_ui\\src\\main\\ets\\ui\\prompt\\DialogUtil.ets": [
+    "Button",
+    "AlertDialog",
+    "If"
+  ],
+  "oh_modules\\.ohpm\\@yunkss+ef_ui@1.0.0\\oh_modules\\@yunkss\\ef_ui\\src\\main\\ets\\ui\\prompt\\efLoading.ets": [
+    "Text",
+    "Stack",
+    "Column",
+    "Image",
+    "Row",
+    "If"
+  ],
+  "oh_modules\\.ohpm\\@yunkss+ef_ui@1.0.0\\oh_modules\\@yunkss\\ef_ui\\src\\main\\ets\\ui\\prompt\\ExceptionUtil.ets": [
+    "Column"
+  ],
+  "oh_modules\\.ohpm\\@yunkss+ef_ui@1.0.0\\oh_modules\\@yunkss\\ef_ui\\src\\main\\ets\\ui\\prompt\\LoadingUtil.ets": [
+    "CustomDialogController",
+    "Row",
+    "If"
+  ],
+  "oh_modules\\.ohpm\\@yunkss+ef_ui@1.0.0\\oh_modules\\@yunkss\\ef_ui\\src\\main\\ets\\ui\\prompt\\TipsUtil.ets": [
+    "CustomDialogController",
+    "Row",
+    "If"
+  ],
+  "oh_modules\\.ohpm\\@yunkss+ef_ui@1.0.0\\oh_modules\\@yunkss\\ef_ui\\src\\main\\ets\\ui\\prompt\\WinDialogUtil.ets": [
+    "If"
+  ],
+  "oh_modules\\.ohpm\\@yunkss+ef_ui@1.0.0\\oh_modules\\@yunkss\\ef_ui\\src\\main\\ets\\ui\\prompt\\efAlert.ets": [
+    "Stack",
+    "Column",
+    "Row",
+    "Text",
+    "Image",
+    "Button",
+    "If"
+  ],
+  "oh_modules\\.ohpm\\@yunkss+ef_ui@1.0.0\\oh_modules\\@yunkss\\ef_ui\\src\\main\\ets\\ui\\prompt\\WinLoadingUtil.ets": [
+    "If"
+  ],
+  "oh_modules\\.ohpm\\@yunkss+ef_ui@1.0.0\\oh_modules\\@yunkss\\ef_ui\\src\\main\\ets\\ui\\select\\Cascade.ets": [
+    "Text",
+    "Panel",
+    "Column",
+    "Row",
+    "Image",
+    "List",
+    "ForEach",
+    "ListItem",
+    "If"
+  ],
+  "oh_modules\\.ohpm\\@yunkss+ef_ui@1.0.0\\oh_modules\\@yunkss\\ef_ui\\src\\main\\ets\\ui\\select\\SelectUtil.ets": [
+    "CustomDialogController",
+    "Row",
+    "If"
+  ],
+  "entry\\src\\main\\ets\\common\\modules\\GridItemDeletionCtrl.ets": [
+    "If"
+  ],
+  "entry\\src\\main\\ets\\pages\\DetailPage.ets": [
+    "Scroller",
+    "Stack",
+    "List",
+    "ForEach",
+    "ListItem",
+    "Image",
+    "GestureGroup",
+    "PinchGesture",
+    "PanGesture",
+    "Row",
+    "If"
+  ],
+  "entry\\src\\main\\ets\\pages\\ListPage.ets": [
+    "Navigation",
+    "Grid",
+    "ForEach",
+    "GridItem",
+    "Image",
+    "If"
+  ],
+  "entry\\src\\main\\ets\\pages\\DetailListPage.ets": [
+    "Scroller",
+    "Image",
+    "Navigation",
+    "Stack",
+    "List",
+    "ForEach",
+    "ListItem",
+    "PinchGesture",
+    "If"
+  ]
+}

@@ -1,0 +1,14 @@
+pkg_modules/.ohpm/@yunkss+ef_ui@1.0.0/pkg_modules/@yunkss/ef_ui:pkg_modules/.ohpm/@yunkss+ef_ui@1.0.0/pkg_modules/@yunkss/ef_ui/Index
+pkg_modules/@yunkss/ef_ui:pkg_modules/.ohpm/@yunkss+ef_ui@1.0.0/pkg_modules/@yunkss/ef_ui
+pkg_modules/.ohpm/@yunkss+ef_json@1.0.1/pkg_modules/@yunkss/ef_json:pkg_modules/.ohpm/@yunkss+ef_json@1.0.1/pkg_modules/@yunkss/ef_json/Index
+pkg_modules/.ohpm/@yunkss+ef_ui@1.0.0/pkg_modules/@yunkss/ef_json:pkg_modules/.ohpm/@yunkss+ef_json@1.0.1/pkg_modules/@yunkss/ef_json
+pkg_modules/.ohpm/@yunkss+ef_core@1.0.1/pkg_modules/@yunkss/ef_core:pkg_modules/.ohpm/@yunkss+ef_core@1.0.1/pkg_modules/@yunkss/ef_core/Index
+pkg_modules/.ohpm/@yunkss+ef_json@1.0.1/pkg_modules/@yunkss/ef_core:pkg_modules/.ohpm/@yunkss+ef_core@1.0.1/pkg_modules/@yunkss/ef_core
+pkg_modules/.ohpm/@yunkss+ef_ui@1.0.0/pkg_modules/@yunkss/ef_core:pkg_modules/.ohpm/@yunkss+ef_core@1.0.1/pkg_modules/@yunkss/ef_core
+@system.app:@native.system.app
+@ohos.app:@native.ohos.app
+@system.router:@native.system.router
+@system.curves:@native.system.curves
+@ohos.curves:@native.ohos.curves
+@system.matrix4:@native.system.matrix4
+@ohos.matrix4:@native.ohos.matrix4

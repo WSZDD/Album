@@ -1,0 +1,7 @@
+media close 0x0a000000
+media dian 0x0a000001
+media error 0x0a000002
+media notice 0x0a000003
+media ok 0x0a000004
+media tips 0x0a000005
+media uiLoading 0x0a000006
