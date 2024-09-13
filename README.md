@@ -33,4 +33,4 @@
 
 ### 更新
 ![](screenshots/device/1.gif)
-![](screenshots/device/2 .gif)
+![](screenshots/device/2.gif)
