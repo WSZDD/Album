@@ -30,3 +30,7 @@
 2. HarmonyOS系统：HarmonyOS NEXT Developer Beta1及以上。
 3. DevEco Studio版本：DevEco Studio NEXT Developer Beta1及以上。
 4. HarmonyOS SDK版本：HarmonyOS NEXT Developer Beta1 SDK及以上。
+
+### 更新
+![](screenshots/device/1.gif)
+![](screenshots/device/2 .gif)
