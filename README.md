@@ -47,7 +47,7 @@
 
 ![](screenshots/device/1.gif)
 
-4.组件拖动动画（实际上没有改变位置，本人无法解决）
+4.组件拖动动画
 
 ![](screenshots/device/2.gif)
 
