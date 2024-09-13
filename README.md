@@ -32,5 +32,28 @@
 4. HarmonyOS SDK版本：HarmonyOS NEXT Developer Beta1 SDK及以上。
 
 ### 更新
+
+1.菜单和自定义弹窗
+
+![](screenshots/device/3.png)
+![](screenshots/device/4.png)
+
+2.申请权限和消息提示
+
+![](screenshots/device/5.png)
+![](screenshots/device/6.png)
+
+3. 背景随轮播图切换
+
 ![](screenshots/device/1.gif)
+
+4.组件拖动动画（实际上没有改变位置，本人无法解决）
+
 ![](screenshots/device/2.gif)
+
+### 参考资料
+
+1. https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V2/ts-universal-attributes-menu-0000001478181385-V2
+2. https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/request-user-authorization-V5
+3. https://gitee.com/harmonyos-cases/cases/tree/master/CommonAppDevelopment/feature/gridexchange
+4. https://gitee.com/harmonyos-cases/cases/blob/master/CommonAppDevelopment/feature/effectKit/src/main/ets/components/mainpage/MainPage.ets
