@@ -154,5 +154,6 @@ struct DetailListPage {
     .title(Constants.PAGE_TITLE)
     .hideBackButton(false)
     .titleMode(NavigationTitleMode.Mini)
+    .margin({ top: '30vp' })
   }
 }

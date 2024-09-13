@@ -78,7 +78,8 @@ class IndexPage extends ViewPU {
                 jsDialog.paramsGenerator_ = paramsLambda;
             },
             offset: { dx: 0, dy: -20 },
-            alignment: DialogAlignment.Bottom
+            alignment: DialogAlignment.Bottom,
+            cancel: this.onCancel.bind(this)
         }, this);
         this.__currentIndex = new ObservedPropertySimplePU(0, this, "currentIndex");
         this.__angle = new ObservedPropertySimplePU(0, this, "angle");
@@ -244,6 +245,11 @@ class IndexPage extends ViewPU {
      * 应用被添加到首页应用所展示的动画
      */
     private effect: TransitionEffect;
+    //定义onCancel回调方法
+    onCancel() {
+        console.info('Callback when the first button is clicked');
+        this.appInfoList.push(new Array<Resource>().concat(Constants.SCENE_LIST, Constants.LIFE_LIST, Constants.MEN_LIST));
+    }
     pixelMapBuilder(parent = null) {
         this.observeComponentCreation2((elmtId, isInitialRender) => {
             __Common__.create();
@@ -253,7 +259,7 @@ class IndexPage extends ViewPU {
         {
             this.observeComponentCreation2((elmtId, isInitialRender) => {
                 if (isInitialRender) {
-                    let componentCall = new PhotoItem(ViewPU.__proto__ !== NativeViewPartialUpdate && parent instanceof PUV2ViewBase ? parent : this, { photoArr: this.movedItem }, undefined, elmtId, () => { }, { page: "entry/src/main/ets/pages/IndexPage.ets", line: 98, col: 5 });
+                    let componentCall = new PhotoItem(ViewPU.__proto__ !== NativeViewPartialUpdate && parent instanceof PUV2ViewBase ? parent : this, { photoArr: this.movedItem }, undefined, elmtId, () => { }, { page: "entry/src/main/ets/pages/IndexPage.ets", line: 107, col: 5 });
                     ViewPU.create(componentCall);
                     let paramsLambda = () => {
                         return {
@@ -341,7 +347,7 @@ class IndexPage extends ViewPU {
             Row.height({ "id": 16777226, "type": 10002, params: [], "bundleName": "com.example.electronicalbum", "moduleName": "entry" });
             Row.alignItems(VerticalAlign.Center);
             Row.justifyContent(FlexAlign.SpaceBetween);
-            Row.margin({ top: { "id": 16777228, "type": 10002, params: [], "bundleName": "com.example.electronicalbum", "moduleName": "entry" } });
+            Row.margin({ top: '30vp' });
             Row.padding({ left: { "id": 16777228, "type": 10002, params: [], "bundleName": "com.example.electronicalbum", "moduleName": "entry" } });
             Row.width(Constants.FULL_PERCENT);
         }, Row);
@@ -378,7 +384,7 @@ class IndexPage extends ViewPU {
                             iconColor: Color.Black,
                             buttonColor: Color.Transparent
                         }
-                    }, undefined, elmtId, () => { }, { page: "entry/src/main/ets/pages/IndexPage.ets", line: 165, col: 9 });
+                    }, undefined, elmtId, () => { }, { page: "entry/src/main/ets/pages/IndexPage.ets", line: 174, col: 9 });
                     ViewPU.create(componentCall);
                     let paramsLambda = () => {
                         return {
@@ -474,10 +480,6 @@ class IndexPage extends ViewPU {
                 // TODO:知识点:执行gridItem切换操作
                 if (isSuccess && insertIndex < this.appInfoList.length) {
                     this.changeIndex(itemIndex, insertIndex);
-                    this.isAddApp = true; // 重新设置动画状态
-                    setTimeout(() => {
-                        this.isAddApp = false; // 动画完成后重置状态
-                    }, 500);
                 }
             });
         }, Grid);
@@ -512,7 +514,7 @@ class IndexPage extends ViewPU {
                         {
                             this.observeComponentCreation2((elmtId, isInitialRender) => {
                                 if (isInitialRender) {
-                                    let componentCall = new PhotoItem(this, { photoArr: photoArr }, undefined, elmtId, () => { }, { page: "entry/src/main/ets/pages/IndexPage.ets", line: 244, col: 13 });
+                                    let componentCall = new PhotoItem(this, { photoArr: photoArr }, undefined, elmtId, () => { }, { page: "entry/src/main/ets/pages/IndexPage.ets", line: 253, col: 13 });
                                     ViewPU.create(componentCall);
                                     let paramsLambda = () => {
                                         return {
@@ -533,7 +535,7 @@ class IndexPage extends ViewPU {
                     observedDeepRender();
                 }
             };
-            this.forEachUpdateFunction(elmtId, Constants.IMG_ARR, forEachItemGenFunction, (photoArr: Resource, index?: number) => JSON.stringify(photoArr) + index, true, true);
+            this.forEachUpdateFunction(elmtId, this.appInfoList, forEachItemGenFunction, (photoArr: Resource, index?: number) => JSON.stringify(photoArr) + index, true, true);
         }, ForEach);
         ForEach.pop();
         Grid.pop();

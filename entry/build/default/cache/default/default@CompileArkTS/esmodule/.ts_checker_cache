@@ -3354,7 +3354,7 @@
       "error": false
     },
     "C:\\Users\\86187\\Desktop\\ElectronicAlbum\\ElectronicAlbum\\entry\\src\\main\\ets\\pages\\IndexPage.ets": {
-      "mtimeMs": 1726198461471.7346,
+      "mtimeMs": 1726236487570.6626,
       "children": [
         "C:\\Users\\86187\\Desktop\\ElectronicAlbum\\ElectronicAlbum\\entry\\src\\main\\ets\\components\\IconButton.ets",
         "C:\\Program Files\\Huawei\\DevEco Studio\\sdk\\HarmonyOS-NEXT-DB2\\openharmony\\ets\\kits\\@kit.ArkUI.d.ts",
@@ -3370,7 +3370,10 @@
         "C:\\Program Files\\Huawei\\DevEco Studio\\sdk\\HarmonyOS-NEXT-DB2\\openharmony\\ets\\kits\\@kit.ArkGraphics2D.d.ts"
       ],
       "parent": [],
-      "error": false
+      "error": true,
+      "errorCodes": [
+        -1
+      ]
     },
     "C:\\Users\\86187\\Desktop\\ElectronicAlbum\\ElectronicAlbum\\entry\\src\\main\\ets\\pages\\DetailPage.ets": {
       "mtimeMs": 1726058020595.231,
@@ -3382,7 +3385,7 @@
       "error": false
     },
     "C:\\Users\\86187\\Desktop\\ElectronicAlbum\\ElectronicAlbum\\entry\\src\\main\\ets\\pages\\ListPage.ets": {
-      "mtimeMs": 1726058020620.233,
+      "mtimeMs": 1726236607766.026,
       "children": [
         "C:\\Program Files\\Huawei\\DevEco Studio\\sdk\\HarmonyOS-NEXT-DB2\\openharmony\\ets\\kits\\@kit.ArkUI.d.ts",
         "C:\\Users\\86187\\Desktop\\ElectronicAlbum\\ElectronicAlbum\\entry\\src\\main\\ets\\common\\constants\\Constants.ets"
@@ -3391,7 +3394,7 @@
       "error": false
     },
     "C:\\Users\\86187\\Desktop\\ElectronicAlbum\\ElectronicAlbum\\entry\\src\\main\\ets\\pages\\DetailListPage.ets": {
-      "mtimeMs": 1726196624333.5366,
+      "mtimeMs": 1726236580681.8035,
       "children": [
         "C:\\Program Files\\Huawei\\DevEco Studio\\sdk\\HarmonyOS-NEXT-DB2\\openharmony\\ets\\kits\\@kit.ArkUI.d.ts",
         "C:\\Users\\86187\\Desktop\\ElectronicAlbum\\ElectronicAlbum\\entry\\src\\main\\ets\\common\\constants\\Constants.ets"
@@ -3751,7 +3754,7 @@
       "error": false
     },
     "C:\\Users\\86187\\Desktop\\ElectronicAlbum\\ElectronicAlbum\\entry\\src\\main\\ets\\components\\CustomDialog.ets": {
-      "mtimeMs": 1726128669855.2493,
+      "mtimeMs": 1726235443412.5703,
       "children": [],
       "parent": [
         "C:\\Users\\86187\\Desktop\\ElectronicAlbum\\ElectronicAlbum\\entry\\src\\main\\ets\\pages\\IndexPage.ets"

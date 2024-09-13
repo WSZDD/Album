@@ -59,7 +59,8 @@ struct IndexPage {
   dialogController : CustomDialogController = new CustomDialogController({
     builder : CustomDialogAdd(),
     offset:{dx:0,dy:-20},
-    alignment:DialogAlignment.Bottom
+    alignment:DialogAlignment.Bottom,
+    cancel: this.onCancel.bind(this),
   })
   @State currentIndex: number = 0;
   @State angle: number = 0;
@@ -92,6 +93,14 @@ struct IndexPage {
         .animation({ curve: curves.springMotion() }))
         // 添加move转场效果，这里的动画参数会跟随上面的TransitionEffect，也就是springMotion()
       .combine(TransitionEffect.move(TransitionEdge.END))
+
+  //定义onCancel回调方法
+  onCancel() {
+    console.info('Callback when the first button is clicked')
+    this.appInfoList.push(new Array<Resource>().concat(Constants.SCENE_LIST, Constants.LIFE_LIST, Constants.MEN_LIST))
+  }
+
+
 
   @Builder
   pixelMapBuilder() {
@@ -188,7 +197,7 @@ struct IndexPage {
       .height($r('app.float.navi_bar_height'))
       .alignItems(VerticalAlign.Center)
       .justifyContent(FlexAlign.SpaceBetween)
-      .margin({ top: $r('app.float.title_padding') })
+      .margin({ top: '30vp' })
       .padding({ left: $r('app.float.title_padding') })
       .width(Constants.FULL_PERCENT)
 
@@ -239,7 +248,7 @@ struct IndexPage {
 
 
       Grid() {
-        ForEach(Constants.IMG_ARR, (photoArr: Array<Resource>, index: number) => {
+        ForEach(this.appInfoList, (photoArr: Array<Resource>, index: number) => {
           GridItem() {
             PhotoItem({ photoArr : photoArr })
           }
@@ -281,10 +290,6 @@ struct IndexPage {
         // TODO:知识点:执行gridItem切换操作
         if (isSuccess && insertIndex < this.appInfoList.length) {
           this.changeIndex(itemIndex, insertIndex);
-          this.isAddApp = true; // 重新设置动画状态
-          setTimeout(() => {
-            this.isAddApp = false; // 动画完成后重置状态
-          }, 500);
 
         }
 

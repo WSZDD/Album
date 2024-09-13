@@ -175,6 +175,7 @@ class DetailListPage extends ViewPU {
             Navigation.title(Constants.PAGE_TITLE);
             Navigation.hideBackButton(false);
             Navigation.titleMode(NavigationTitleMode.Mini);
+            Navigation.margin({ top: '30vp' });
         }, Navigation);
         this.observeComponentCreation2((elmtId, isInitialRender) => {
             Stack.create({ alignContent: Alignment.Bottom });
