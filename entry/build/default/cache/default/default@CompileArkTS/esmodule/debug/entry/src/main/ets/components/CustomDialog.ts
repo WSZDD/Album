@@ -83,8 +83,8 @@ export class CustomDialogAdd extends ViewPU {
             Button.backgroundColor('#00000000');
             Button.fontColor(Color.Black);
             Button.onClick(() => {
-                this.confirm();
                 this.controller.close();
+                this.cancel();
             });
         }, Button);
         Button.pop();
@@ -94,7 +94,7 @@ export class CustomDialogAdd extends ViewPU {
             Button.fontColor(Color.Red);
             Button.onClick(() => {
                 this.controller.close();
-                this.cancel();
+                this.confirm();
             });
         }, Button);
         Button.pop();

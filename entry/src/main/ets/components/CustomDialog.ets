@@ -24,15 +24,15 @@ export struct CustomDialogAdd {
           .backgroundColor('#00000000')
           .fontColor(Color.Black)
           .onClick(() => {
-            this.confirm()
             this.controller.close()
+            this.cancel()
           })
         Button('确认')
           .backgroundColor('#00000000')
           .fontColor(Color.Red)
           .onClick(() => {
             this.controller.close()
-            this.cancel()
+            this.confirm()
           })
       }
       .margin({

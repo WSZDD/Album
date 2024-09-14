@@ -51,6 +51,14 @@
 
 ![](screenshots/device/2.gif)
 
+5.轮播图的隐藏和显示
+
+![](screenshots/device/3.gif)
+
+6.新建相册功能实现和动画效果
+
+![](screenshots/device/4.gif)
+
 ### 参考资料
 
 1. https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V2/ts-universal-attributes-menu-0000001478181385-V2

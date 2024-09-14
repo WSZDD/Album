@@ -5,9 +5,12 @@ interface IndexPage_Params {
     swiperController?: SwiperController;
     scroller?: Scroller;
     dialogController?: CustomDialogController;
+    visib?: Visibility;
+    set?: ResourceStr;
     currentIndex?: number;
     angle?: number;
     appInfoList?: Array<resourceArray>;
+    addList?: resourceArray;
     isAddApp?: boolean;
     itemAreaWidth?: number;
     isChange?: boolean;
@@ -69,21 +72,32 @@ class IndexPage extends ViewPU {
         this.scroller = new Scroller();
         this.dialogController = new CustomDialogController({
             builder: () => {
-                let jsDialog = new CustomDialogAdd(this, {}, undefined, -1, () => { }, { page: "entry/src/main/ets/pages/IndexPage.ets", line: 60, col: 15 });
+                let jsDialog = new CustomDialogAdd(this, {
+                    cancel: this.onCancel,
+                    confirm: this.onAccept.bind(this)
+                }, undefined, -1, () => { }, { page: "entry/src/main/ets/pages/IndexPage.ets", line: 60, col: 15 });
                 jsDialog.setController(this.dialogController);
                 ViewPU.create(jsDialog);
                 let paramsLambda = () => {
-                    return {};
+                    return {
+                        cancel: this.onCancel,
+                        confirm: this.onAccept.bind(this)
+                    };
                 };
                 jsDialog.paramsGenerator_ = paramsLambda;
             },
             offset: { dx: 0, dy: -20 },
             alignment: DialogAlignment.Bottom,
-            cancel: this.onCancel.bind(this)
+            cancel: () => {
+                this.appInfoList.push(new Array<Resource>().concat(Constants.SCENE_LIST, Constants.LIFE_LIST, Constants.MEN_LIST));
+            }
         }, this);
+        this.__visib = new ObservedPropertySimplePU(Visibility.Visible, this, "visib");
+        this.__set = new ObservedPropertyObjectPU('隐藏轮播', this, "set");
         this.__currentIndex = new ObservedPropertySimplePU(0, this, "currentIndex");
         this.__angle = new ObservedPropertySimplePU(0, this, "angle");
         this.__appInfoList = new ObservedPropertyObjectPU(Constants.IMG_ARR, this, "appInfoList");
+        this.__addList = new ObservedPropertyObjectPU(Constants.SCENE_LIST, this, "addList");
         this.__isAddApp = new ObservedPropertySimplePU(false, this, "isAddApp");
         this.itemAreaWidth = 0;
         this.isChange = false;
@@ -120,6 +134,12 @@ class IndexPage extends ViewPU {
         if (params.dialogController !== undefined) {
             this.dialogController = params.dialogController;
         }
+        if (params.visib !== undefined) {
+            this.visib = params.visib;
+        }
+        if (params.set !== undefined) {
+            this.set = params.set;
+        }
         if (params.currentIndex !== undefined) {
             this.currentIndex = params.currentIndex;
         }
@@ -128,6 +148,9 @@ class IndexPage extends ViewPU {
         }
         if (params.appInfoList !== undefined) {
             this.appInfoList = params.appInfoList;
+        }
+        if (params.addList !== undefined) {
+            this.addList = params.addList;
         }
         if (params.isAddApp !== undefined) {
             this.isAddApp = params.isAddApp;
@@ -157,9 +180,12 @@ class IndexPage extends ViewPU {
     updateStateVars(params: IndexPage_Params) {
     }
     purgeVariableDependenciesOnElmtId(rmElmtId) {
+        this.__visib.purgeDependencyOnElmtId(rmElmtId);
+        this.__set.purgeDependencyOnElmtId(rmElmtId);
         this.__currentIndex.purgeDependencyOnElmtId(rmElmtId);
         this.__angle.purgeDependencyOnElmtId(rmElmtId);
         this.__appInfoList.purgeDependencyOnElmtId(rmElmtId);
+        this.__addList.purgeDependencyOnElmtId(rmElmtId);
         this.__isAddApp.purgeDependencyOnElmtId(rmElmtId);
         this.__GridItemDeletion.purgeDependencyOnElmtId(rmElmtId);
         this.__movedItem.purgeDependencyOnElmtId(rmElmtId);
@@ -167,9 +193,12 @@ class IndexPage extends ViewPU {
         this.__topSafeHeight.purgeDependencyOnElmtId(rmElmtId);
     }
     aboutToBeDeleted() {
+        this.__visib.aboutToBeDeleted();
+        this.__set.aboutToBeDeleted();
         this.__currentIndex.aboutToBeDeleted();
         this.__angle.aboutToBeDeleted();
         this.__appInfoList.aboutToBeDeleted();
+        this.__addList.aboutToBeDeleted();
         this.__isAddApp.aboutToBeDeleted();
         this.__GridItemDeletion.aboutToBeDeleted();
         this.__movedItem.aboutToBeDeleted();
@@ -181,6 +210,20 @@ class IndexPage extends ViewPU {
     private swiperController: SwiperController;
     private scroller: Scroller;
     private dialogController: CustomDialogController;
+    private __visib: ObservedPropertySimplePU<Visibility>;
+    get visib() {
+        return this.__visib.get();
+    }
+    set visib(newValue: Visibility) {
+        this.__visib.set(newValue);
+    }
+    private __set: ObservedPropertyObjectPU<ResourceStr>;
+    get set() {
+        return this.__set.get();
+    }
+    set set(newValue: ResourceStr) {
+        this.__set.set(newValue);
+    }
     private __currentIndex: ObservedPropertySimplePU<number>;
     get currentIndex() {
         return this.__currentIndex.get();
@@ -201,6 +244,13 @@ class IndexPage extends ViewPU {
     }
     set appInfoList(newValue: Array<resourceArray>) {
         this.__appInfoList.set(newValue);
+    }
+    private __addList: ObservedPropertyObjectPU<resourceArray>;
+    get addList() {
+        return this.__addList.get();
+    }
+    set addList(newValue: resourceArray) {
+        this.__addList.set(newValue);
     }
     private __isAddApp: ObservedPropertySimplePU<boolean>; // 应用被添加到首页应用时为true
     get isAddApp() {
@@ -245,10 +295,15 @@ class IndexPage extends ViewPU {
      * 应用被添加到首页应用所展示的动画
      */
     private effect: TransitionEffect;
-    //定义onCancel回调方法
     onCancel() {
-        console.info('Callback when the first button is clicked');
-        this.appInfoList.push(new Array<Resource>().concat(Constants.SCENE_LIST, Constants.LIFE_LIST, Constants.MEN_LIST));
+    }
+    onAccept() {
+        this.isAddApp = true;
+        this.isAddApp = true;
+        this.appInfoList.push(this.appInfoList[Math.floor(Math.random() * 4)]);
+        setTimeout(() => {
+            this.isAddApp = false;
+        }, 2000);
     }
     pixelMapBuilder(parent = null) {
         this.observeComponentCreation2((elmtId, isInitialRender) => {
@@ -259,7 +314,7 @@ class IndexPage extends ViewPU {
         {
             this.observeComponentCreation2((elmtId, isInitialRender) => {
                 if (isInitialRender) {
-                    let componentCall = new PhotoItem(ViewPU.__proto__ !== NativeViewPartialUpdate && parent instanceof PUV2ViewBase ? parent : this, { photoArr: this.movedItem }, undefined, elmtId, () => { }, { page: "entry/src/main/ets/pages/IndexPage.ets", line: 107, col: 5 });
+                    let componentCall = new PhotoItem(ViewPU.__proto__ !== NativeViewPartialUpdate && parent instanceof PUV2ViewBase ? parent : this, { photoArr: this.movedItem }, undefined, elmtId, () => { }, { page: "entry/src/main/ets/pages/IndexPage.ets", line: 119, col: 5 });
                     ViewPU.create(componentCall);
                     let paramsLambda = () => {
                         return {
@@ -363,14 +418,20 @@ class IndexPage extends ViewPU {
                 {
                     value: '新建相册',
                     action: () => {
-                        console.info('handle Menu1 select');
                         this.dialogController.open();
                     }
                 },
                 {
-                    value: '设置',
+                    value: this.set,
                     action: () => {
-                        console.info('handle Menu2 select');
+                        if (this.set == '隐藏轮播') {
+                            this.visib = Visibility.None;
+                            this.set = '显示轮播';
+                        }
+                        else {
+                            this.visib = Visibility.Visible;
+                            this.set = '隐藏轮播';
+                        }
                     }
                 },
             ]);
@@ -384,7 +445,7 @@ class IndexPage extends ViewPU {
                             iconColor: Color.Black,
                             buttonColor: Color.Transparent
                         }
-                    }, undefined, elmtId, () => { }, { page: "entry/src/main/ets/pages/IndexPage.ets", line: 174, col: 9 });
+                    }, undefined, elmtId, () => { }, { page: "entry/src/main/ets/pages/IndexPage.ets", line: 186, col: 9 });
                     ViewPU.create(componentCall);
                     let paramsLambda = () => {
                         return {
@@ -406,6 +467,7 @@ class IndexPage extends ViewPU {
         Row.pop();
         this.observeComponentCreation2((elmtId, isInitialRender) => {
             Swiper.create(this.swiperController);
+            Swiper.visibility(this.visib);
             Swiper.autoPlay(true);
             Swiper.loop(true);
             Swiper.margin({ "id": 16777224, "type": 10002, params: [], "bundleName": "com.example.electronicalbum", "moduleName": "entry" });
@@ -514,7 +576,7 @@ class IndexPage extends ViewPU {
                         {
                             this.observeComponentCreation2((elmtId, isInitialRender) => {
                                 if (isInitialRender) {
-                                    let componentCall = new PhotoItem(this, { photoArr: photoArr }, undefined, elmtId, () => { }, { page: "entry/src/main/ets/pages/IndexPage.ets", line: 253, col: 13 });
+                                    let componentCall = new PhotoItem(this, { photoArr: photoArr }, undefined, elmtId, () => { }, { page: "entry/src/main/ets/pages/IndexPage.ets", line: 272, col: 13 });
                                     ViewPU.create(componentCall);
                                     let paramsLambda = () => {
                                         return {

@@ -57,14 +57,22 @@ struct IndexPage {
   swiperController: SwiperController = new SwiperController();
   scroller: Scroller = new Scroller();
   dialogController : CustomDialogController = new CustomDialogController({
-    builder : CustomDialogAdd(),
+    builder : CustomDialogAdd({
+      cancel: this.onCancel,
+      confirm: this.onAccept.bind(this)
+    }),
     offset:{dx:0,dy:-20},
     alignment:DialogAlignment.Bottom,
-    cancel: this.onCancel.bind(this),
+    cancel:()=>{
+      this.appInfoList.push(new Array<Resource>().concat(Constants.SCENE_LIST, Constants.LIFE_LIST, Constants.MEN_LIST))
+    }
   })
+  @State visib: Visibility = Visibility.Visible
+  @State set: ResourceStr = '隐藏轮播'
   @State currentIndex: number = 0;
   @State angle: number = 0;
   @State appInfoList: Array<resourceArray> = Constants.IMG_ARR;
+  @State addList: resourceArray = Constants.SCENE_LIST;
   @State isAddApp: boolean = false; // 应用被添加到首页应用时为true
   private itemAreaWidth: number = 0;
   private isChange: boolean = false;
@@ -93,14 +101,18 @@ struct IndexPage {
         .animation({ curve: curves.springMotion() }))
         // 添加move转场效果，这里的动画参数会跟随上面的TransitionEffect，也就是springMotion()
       .combine(TransitionEffect.move(TransitionEdge.END))
+  onCancel(){
 
-  //定义onCancel回调方法
-  onCancel() {
-    console.info('Callback when the first button is clicked')
-    this.appInfoList.push(new Array<Resource>().concat(Constants.SCENE_LIST, Constants.LIFE_LIST, Constants.MEN_LIST))
   }
 
-
+  onAccept(){
+    this.isAddApp = true
+    this.isAddApp = true
+    this.appInfoList.push(this.appInfoList[Math.floor(Math.random() * 4)])
+    setTimeout(() => {
+      this.isAddApp = false
+    }, 2000);
+  }
 
   @Builder
   pixelMapBuilder() {
@@ -182,14 +194,20 @@ struct IndexPage {
             {
               value: '新建相册',
               action: () => {
-                console.info('handle Menu1 select')
                 this.dialogController.open()
               }
             },
             {
-              value: '设置',
+              value: this.set,
               action: () => {
-                console.info('handle Menu2 select')
+                if (this.set == '隐藏轮播'){
+                  this.visib = Visibility.None
+                  this.set = '显示轮播'
+                }else{
+                  this.visib = Visibility.Visible
+                  this.set = '隐藏轮播'
+                }
+
               }
             },
           ])
@@ -212,6 +230,7 @@ struct IndexPage {
           .aspectRatio(Constants.BANNER_ASPECT_RATIO)
         }, (item: Resource, index?: number) => JSON.stringify(item) + index)
       }
+      .visibility(this.visib)
       .autoPlay(true)
       .loop(true)
       .margin($r('app.float.grid_padding'))
