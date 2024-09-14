@@ -149,7 +149,7 @@ struct IndexPage {
           windowClass.setWindowSystemBarProperties(systemBarProperties)
         })
       })
-    // TODO 知识点：初始化页面获取第一张图片的颜色
+    // 初始化页面获取第一张图片的颜色
     const context = getContext(this);
     const resourceMgr: resourceManager.ResourceManager = context.resourceManager;
     const fileData: Uint8Array = await resourceMgr.getMediaContent(Constants.BANNER_IMG_LIST[0]);
@@ -157,7 +157,7 @@ struct IndexPage {
     const imageSource: image.ImageSource = image.createImageSource(buffer);
     const pixelMap: image.PixelMap = await imageSource.createPixelMap();
 
-    // TODO 知识点：智能取色器接口使用，初始化背景色
+    // 智能取色器接口使用，初始化背景色
     effectKit.createColorPicker(pixelMap, (err, colorPicker) => {
       let color = colorPicker.getMainColorSync();
       // 将取色器选取的color示例转换为十六进制颜色代码
@@ -207,7 +207,6 @@ struct IndexPage {
                   this.visib = Visibility.Visible
                   this.set = '隐藏轮播'
                 }
-
               }
             },
           ])
@@ -302,11 +301,11 @@ struct IndexPage {
       .supportAnimation(true)
       .editMode(true)
       .onItemDragStart((event: ItemDragInfo, itemIndex: number) => {
-        // TODO:知识点:在onItemDragStart函数返回自定义组件，可在拖拽过程中显示此自定义组件。
+        // 在onItemDragStart函数返回自定义组件，可在拖拽过程中显示此自定义组件。
         return this.pixelMapBuilder();
       })
       .onItemDrop((event: ItemDragInfo, itemIndex: number, insertIndex: number, isSuccess: boolean) => {
-        // TODO:知识点:执行gridItem切换操作
+        // 执行gridItem切换操作
         if (isSuccess && insertIndex < this.appInfoList.length) {
           this.changeIndex(itemIndex, insertIndex);
 
